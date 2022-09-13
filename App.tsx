@@ -1,8 +1,8 @@
 import React from 'react';
 import { Provider as PaperProvider, TextInput } from 'react-native-paper';
 import {theme} from './App.style';
-import { LoginScreen } from './app/screens/login/login.screen';
 import HomeScreen from './app/screens/home/home.screen';
+import { LoginScreen } from './app/screens/login/login.screen';
 import { RegisterScreen } from './app/screens/register/register.screeen';
 
 
