@@ -1,78 +1,78 @@
-// import  React from 'react';
-// import { SafeAreaView, Image, View } from 'react-native';
-// import { Card, Button, IconButton, List, FAB, Title } from 'react-native-paper';
-// import MapView, { Marker } from 'react-native-maps';
-// import { homeStyle } from './home.style';
+import  React from 'react';
+import { SafeAreaView, Image, View } from 'react-native';
+import { Card, Button, IconButton, List, FAB, Title } from 'react-native-paper';
+import MapView, { Marker } from 'react-native-maps';
+import { homeStyle } from './home.style';
 
 
 
-// const HomeScreen = () => {
+const HomeScreen = () => {
 
-//     // const state: number = 2;
+    // const state: number = 2;
 
-//     return (
-//         <SafeAreaView style={homeStyle.flex}>
-//            <MapView 
-//            style={homeStyle.flex}
-//            initialRegion={{
-//             latitude: 37.78825,
-//             longitude: -122.4324,
-//             latitudeDelta: 1,
-//             longitudeDelta: 1,
-//             }}/>
-//             {/* {
-//                 state == 1?
-//                 <>
-//                 <Markerа
-//                 description="car park1"
-//                 coordinate={{ latitude:37.78825, longitude: -122.4324 }} >
-//                  <Image
-//                     style={homeStyle.markerImage}
-//                     source={require("../../../assets/—Pngtree—vector car icon_3989896.png")} /> 
+    return (
+        <SafeAreaView style={homeStyle.flex}>
+           <MapView 
+           style={homeStyle.flex}
+           initialRegion={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 1,
+            longitudeDelta: 1,
+            }}/>
+            {/* {
+                state == 1?
+                <>
+                <Markerа
+                description="car park1"
+                coordinate={{ latitude:37.78825, longitude: -122.4324 }} >
+                 <Image
+                    style={homeStyle.markerImage}
+                    source={require("../../../assets/—Pngtree—vector car icon_3989896.png")} /> 
 
 
-//             </Marker> 
-//             </>
-//             : null
-//             }
-//             {
-//                 state == 2?
-//                 <Card>
-//                     <Card.Content>
-//                         <List.Item
-//                         title="$ 15.00"
-//                         description="Total price for parking"
-//                         left={()=>
-//                             <IconButton
-//                                 icon="car"
-//                                 size={30}/>
-//                         }
-//                         right={() =>
-//                             <View>
-//                                 <Button>Cancel</Button>
-//                                 <Button mode="contained">Confirm</Button>
+            </Marker> 
+            </>
+            : null
+            }
+            {
+                state == 2?
+                <Card>
+                    <Card.Content>
+                        <List.Item
+                        title="$ 15.00"
+                        description="Total price for parking"
+                        left={()=>
+                            <IconButton
+                                icon="car"
+                                size={30}/>
+                        }
+                        right={() =>
+                            <View>
+                                <Button>Cancel</Button>
+                                <Button mode="contained">Confirm</Button>
 
-//                             </View>
+                            </View>
 
-//                         }/>
-//                     </Card.Content>
-//                 </Card>
-//                 : null
-//             }
+                        }/>
+                    </Card.Content>
+                </Card>
+                : null
+            }
              
             
-//            </MapView>
-//            {
-//                 state ==1?
-//                 <FAB
-//                     style={homeStyle.fab}
-//                     icon="plus" />
-//                 : null
-//            } */}
+           </MapView>
+           {
+                state ==1?
+                <FAB
+                    style={homeStyle.fab}
+                    icon="plus" />
+                : null
+           } */}
             
-//         </SafeAreaView>
-//     )
-// }
+        </SafeAreaView>
+    )
+}
 
 
-// export default HomeScreen;
+export default HomeScreen;

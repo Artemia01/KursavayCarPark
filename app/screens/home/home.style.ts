@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 
+
 export const homeStyle = StyleSheet.create({
     flex: {
         flex: 1
@@ -13,5 +14,6 @@ export const homeStyle = StyleSheet.create({
     markerImage: {
         width: 35,
         height: 35
-    }
+    },
+    
 })
