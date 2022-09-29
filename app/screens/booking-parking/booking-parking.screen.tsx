@@ -4,13 +4,20 @@ import { Button, TextInput, Title } from "react-native-paper";
 import { HeaderComponent } from "../../components/header/header.components";
 import { bookingParkingStyle } from "./booking-parking.style";
 
-const BookingParkingScreen = () => {
+interface BookingParkingScreenProps {
+    navigation: any;
+}
+
+const BookingParkingScreen = (props: BookingParkingScreenProps) => {
 
     const destinations: number[] = [1, 2];
 
     return (
         <SafeAreaView>
-            <HeaderComponent title="Booking Parking" hasBackButton={true}/>
+            <HeaderComponent 
+            title="Booking Parking" 
+            hasBackButton={true}
+            navigation={props.navigation}/>
             <View style={bookingParkingStyle.marginHorizontal}>
                 <TextInput
                     label="Number of the Car"/>

@@ -3,9 +3,13 @@ import { theme } from "../../../App.style"
 
 
 export const registerStyle = StyleSheet.create({
+    
     content : {
         padding: 15,
         paddingTop: 0
+    },
+    flex: {
+        flex: 1
     },
     icon:{
         color: theme.colors.primary
@@ -13,7 +17,8 @@ export const registerStyle = StyleSheet.create({
     button:{
         margin: 15,
         marginLeft: 0,
-        marginRight: 0
+        marginRight: 0,
+     
 
     }
     
