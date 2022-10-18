@@ -13,6 +13,7 @@ interface ParkingScreen1Props {
 
 
 const ParkingScreen1 = (props: ParkingScreen1Props) =>{
+    const Payment =() => props.navigation.navigate("CardPayment")
 
     return (
         <SafeAreaView style={parkingStyle.flex}>
@@ -62,7 +63,7 @@ const ParkingScreen1 = (props: ParkingScreen1Props) =>{
                 <View>
                 <View style={parkingStyle.button}>
                 <View style={parkingStyle.row}>
-                     <Text style={[parkingStyle.box, { backgroundColor: "gray" }]} >1</Text>
+                     <Text style={[parkingStyle.box, { backgroundColor: "gray" }]} onPress={Payment} >1</Text>
                      <Text style={[parkingStyle.box, { backgroundColor: "gray" }]}>2</Text>
                      <Text style={[parkingStyle.box, { backgroundColor: "gray" }]}>3</Text>
                      <Text style={[parkingStyle.box, { backgroundColor: "steelblue" }]}>4</Text>

@@ -10,6 +10,7 @@ import ParkingScreen3 from "./screens/Parking/parking3.screen";
 import ParkingScreen4 from "./screens/Parking/parking4.screen";
 import ParkingScreen5 from "./screens/Parking/parking5.screen";
 import BookingParkingScreen from "./screens/booking-parking/booking-parking.screen";
+import CardPayment from "./screens/CardPayment/cardpayment";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ const AppNavigator = () => (
             <Screen name="Login" component={LoginScreen}></Screen>
             <Screen name="Home" component={HomeScreen}></Screen>
             <Screen name="Register" component={RegisterScreen}></Screen>
+            <Screen name="CardPayment" component={CardPayment}></Screen>
             {/* <Screen name="ParkingRoute" component={BookingParkingScreen}></Screen> */}
             <Screen name="Parking №1" component={ParkingScreen1}></Screen>
             <Screen name="Parking №2" component={ParkingScreen2}></Screen>
