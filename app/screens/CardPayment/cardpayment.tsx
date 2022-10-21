@@ -3,7 +3,7 @@ import { SafeAreaView, View, Text, StyleSheet, InputAccessoryView, TextInputComp
 import { Button, Card, TextInput} from 'react-native-paper';
 import { CardPaymentStyle } from './cardpayment.style';
 import { HeaderComponent } from "../../components/header/header.components";
-import { TextInputMask} from "react-native-masked-text";
+
 import { InputMode } from 'react-native-paper/lib/typescript/components/TextInput/Adornment/enums';
 
 

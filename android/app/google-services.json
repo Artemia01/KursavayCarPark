@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "112034589924",
+    "project_id": "kursavay",
+    "storage_bucket": "kursavay.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112034589924:android:4580e4db4d35eb4b78d0f1",
+        "android_client_info": {
+          "package_name": "com.kursavay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112034589924-5ktat89pmk0kb77gu9m24eisj2eu9fp5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCz9-EwZh8OOmRYrTOo890xiWl7fbYBLpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112034589924-5ktat89pmk0kb77gu9m24eisj2eu9fp5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

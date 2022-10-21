@@ -14,7 +14,7 @@ interface HomeScreenProps{
 
 const HomeScreen = (props: HomeScreenProps) =>{
 
-    const goParkingRoute = () => props.navigation.navigate("ParkingRoute")
+    //const goParkingRoute = () => props.navigation.navigate("ParkingRoute")
 
     const state: number =1; //1 - точки на карте, 2- красніе маркеры, 3 - загрузка 
 

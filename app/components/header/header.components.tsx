@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Appbar, Menu } from 'react-native-paper';
 import { headerStyle } from './header.style';
+import auth from '@react-native-firebase/auth';
 
 interface HeaderComponentParams{
     hasBackButton? : boolean;
@@ -47,7 +48,9 @@ export const HeaderComponent = (props: HeaderComponentParams) => {
 
                      <Menu.Item
                         title="LogOut" 
-                        onPress={logout}/>
+                        onPress={() => {
+                            auth().signOut();
+                          }}/>
                 </Menu>
 
             }
