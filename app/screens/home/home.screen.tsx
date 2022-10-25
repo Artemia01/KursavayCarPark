@@ -1,11 +1,11 @@
-import React from "react";
-import { Image, SafeAreaView } from "react-native";
-import MapView,{ Marker } from "react-native-maps";
-import { FAB } from "react-native-paper";
+import React, { useEffect, useState } from "react";
+import { Image, SafeAreaView, Platform, PermissionsAndroid } from "react-native";
+import MapView,{ Callout, Circle, Marker } from "react-native-maps";
+import { FAB, Text } from "react-native-paper";
 import { ConfirmParkingSpaceComponent } from "../../components/header/confirm-parking-space/confirm-parking-space.component";
 import { HeaderComponent } from "../../components/header/header.components";
 import { SearchingParkSpaceComponent } from "../../components/searching-park-space/searching-park-space.component";
-
+import Geolocation from "@react-native-community/geolocation";
 import { homeStyle } from "./home.style";
 
 interface HomeScreenProps{
@@ -13,10 +13,26 @@ interface HomeScreenProps{
 }
 
 const HomeScreen = (props: HomeScreenProps) =>{
+   
+const [region, setRegion] = useState(null);
+
+useEffect(() =>{
+    getMyLocation()
+}, [])
+
+function getMyLocation(){
+    Geolocation.getCurrentPosition( info => {
+        console.log("LAT ", info.coords.latitude)
+        console.log("LONG ", info.coords.longitude)
+
+    })
+}
+
+
 
     //const goParkingRoute = () => props.navigation.navigate("ParkingRoute")
 
-    const state: number =1; //1 - точки на карте, 2- красніе маркеры, 3 - загрузка 
+   
 
     const openMark1 = () => props.navigation.navigate("Parking №1")
     const openMark2 = () => props.navigation.navigate("Parking №2")
@@ -30,16 +46,29 @@ const HomeScreen = (props: HomeScreenProps) =>{
              <HeaderComponent title="CarPark" 
                     navigation={props.navigation}/> 
             <MapView
+                onMapReady={() => {
+                    Platform.OS === 'android' ?
+                    PermissionsAndroid.request(
+                        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION)
+                        .then(() => {
+                            console.log("USUARIO ACEITOU")
+                        })
+                    : ''
+                   
+                }}
+
                 style={homeStyle.flex}
-                initialRegion={{
-                    latitude: 47.8228900,
-                    longitude: 35.1903100,
-                    latitudeDelta: 0.09,
-                    longitudeDelta: 0.04
-                  }}>
-            {
-                state == 1?
-                <>
+                region={region}
+                zoomEnabled={true}
+                minZoomLevel={13}
+                showsUserLocation={true}
+                loadingEnabled={true}
+                >
+              
+               
+
+
+            
                 <Marker 
                     description="Car Park #1"
                     coordinate={{ latitude: 47.8228900, longitude: 35.173100}}
@@ -80,69 +109,13 @@ const HomeScreen = (props: HomeScreenProps) =>{
                             style={homeStyle.markerImage}
                             source={require("../../../assets/pngwing.com.png")}/>
             </Marker>
-            </>
-            :null
-            }
-            {
-                state == 2?
-                <>
-                <Marker
-                    description="Origin"
-                    coordinate={{ latitude: 47.8228900, longitude: 35.173100}}>
-                    
-            </Marker>
-            <Marker
-                    description="Destination"
-                    coordinate={{ latitude: 47.8508900, longitude: 35.13089100}}>
-                    
-            </Marker>
-            {/* <Marker
-                    description="Car Park #1"
-                    coordinate={{ latitude: 47.8228900, longitude: 35.1533100}}>
-                    <Image
-                            style={homeStyle.markerImage}
-                            source={require("../../../assets/pngwing.com.png")}/>
-            </Marker>
-            <Marker
-                    description="Car Park #1"
-                    coordinate={{ latitude: 47.8508900, longitude: 35.103100}}>
-                    <Image
-                            style={homeStyle.markerImage}
-                            source={require("../../../assets/pngwing.com.png")}/>
-            </Marker>
-            <Marker
-                    description="Car Park #1"
-                    coordinate={{ latitude: 47.8328900, longitude: 35.1403100}}>
-                    <Image
-                            style={homeStyle.markerImage}
-                            source={require("../../../assets/pngwing.com.png")}/>
-            </Marker> */}
-            </>
-            :null
-            }
 
-        
-            
             </MapView>
-            {/* {
-                state == 1?
-                <FAB 
-            style={homeStyle.fab}
-            icon="plus"
-            onPress={goParkingRoute}/> // кнопка плюс с формой 
-            :null
 
-            } */}
-            {
-                state == 2?
-               <ConfirmParkingSpaceComponent />
-                :null
-            }
-            {
-                state == 3?
-                <SearchingParkSpaceComponent />
-                : null
-            }
+
+
+            
+               
             
         </SafeAreaView>
     )
