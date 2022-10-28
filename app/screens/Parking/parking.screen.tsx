@@ -1,3 +1,4 @@
+import { useLinkProps } from "@react-navigation/native";
 import React from "react";
 import { SafeAreaView, View } from "react-native";
 import MapView from "react-native-maps";
@@ -7,20 +8,45 @@ import { HeaderComponent } from "../../components/header/header.components";
 import { parkingStyle } from "./parking.style";
 
 interface ParkingScreen1Props {
-    navigation: any;
+    
+    id: number,
+    latitude: number,
+    longitude: number,
+    parkingButtons: Array <{id: number, pay: boolean}>,
+    name: string,
+    address: string,
+    image: string,
+
+}
+
+interface ParkingButtonProps {
+    id: number;
+    pay: boolean;
 }
 
 
 
-const ParkingScreen1 = (props: ParkingScreen1Props) =>{
-    const Payment =() => props.navigation.navigate("CardPayment")
+const parkingButtons = [{'id':1, 'pay':true}, {'id':2, 'pay':true}, {'id':3, 'pay':true}, {'id':4, 'pay':true}, {'id':5, 'pay':true}, {'id':6, 'pay':true}, 
+                       {'id':7, 'pay':true}, {'id':8, 'pay':true}, {'id':9, 'pay':true}, {'id':10, 'pay':true}, {'id':11, 'pay':true}, {'id':12, 'pay':true}]
+
+
+
+                       
+const ParkingScreen = ({navigation,route}:any, props:ParkingScreen1Props) =>{
+    const {name, address, image} = route.params;
+
+    const Payment =() => navigation.navigate("CardPayment")
+    
+
+     const ParkingButton = (props: ParkingButtonProps) => <Text key= {props.id} style={[parkingStyle.box, { backgroundColor: "gray" }]} onPress={Payment} >{props.id}</Text>
+    
 
     return (
         <SafeAreaView style={parkingStyle.flex}>
             <HeaderComponent 
-            title={"Parking №1"} 
+            title={name} 
             hasBackButton={true}
-            navigation={props.navigation}/>
+            navigation={navigation}/>
             <View style={parkingStyle.flex}>
                 <MapView
                     initialRegion={{
@@ -36,18 +62,18 @@ const ParkingScreen1 = (props: ParkingScreen1Props) =>{
             <Card>
                 <Card.Content>
                 <List.Item
-                    title={"Parking №1"}
+                    title={name}
                     description="Work Time: 24/7"
                     left={() => 
                         <Avatar.Image
                             size={80}
-                            source={{uri: "https://www.sq.com.ua/img/news/2018/03/14/parking.jpg"}}
+                            source={{uri: image}}
                         />
                     }
                 />
                  <List.Item
                     title="Address"
-                    description="Fortechna st,54"
+                    description={address}
                     left={()=>
                         <List.Icon icon="flag-outline"/>
                     }
@@ -61,27 +87,22 @@ const ParkingScreen1 = (props: ParkingScreen1Props) =>{
                     
                    
                 <View>
+
+
                 <View style={parkingStyle.button}>
                 <View style={parkingStyle.row}>
-                     <Text style={[parkingStyle.box, { backgroundColor: "gray" }]} onPress={Payment} >1</Text>
-                     <Text style={[parkingStyle.box, { backgroundColor: "gray" }]}>2</Text>
-                     <Text style={[parkingStyle.box, { backgroundColor: "gray" }]}>3</Text>
-                     <Text style={[parkingStyle.box, { backgroundColor: "steelblue" }]}>4</Text>
-                     <Text style={[parkingStyle.box, { backgroundColor: "steelblue" }]}>5</Text>
-                     <Text style={[parkingStyle.box, { backgroundColor: "gray" }]}>6</Text>
-                     <Text style={[parkingStyle.box, { backgroundColor: "gray" }]}>7</Text>
-                     <Text style={[parkingStyle.box, { backgroundColor: "gray" }]}>8</Text>
-                     <Text style={[parkingStyle.box, { backgroundColor: "gray" }]}>9</Text>
-                     <Text style={[parkingStyle.box, { backgroundColor: "gray" }]}>10</Text> 
-                     <Text style={[parkingStyle.box, { backgroundColor: "gray" }]}>11</Text>
-                     <Text style={[parkingStyle.box, { backgroundColor: "steelblue" }]}>12</Text>
+                  {parkingButtons.map(ParkingButton)}
                     </View>
                 </View>
                 </View>
+
+
+
+
                 </Card.Content>
             </Card>
         </SafeAreaView>
     )
 }
 
-export default ParkingScreen1;
+export default ParkingScreen;

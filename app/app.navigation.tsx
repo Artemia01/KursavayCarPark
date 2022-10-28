@@ -4,11 +4,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { LoginScreen } from "./screens/login/login.screen";
 import HomeScreen from "./screens/home/home.screen";
 import { RegisterScreen } from "./screens/register/register.screen";
-import ParkingScreen1 from "./screens/Parking/parking1.screen";
-import ParkingScreen2 from "./screens/Parking/parking2.screen";
-import ParkingScreen3 from "./screens/Parking/parking3.screen";
-import ParkingScreen4 from "./screens/Parking/parking4.screen";
-import ParkingScreen5 from "./screens/Parking/parking5.screen";
+import ParkingScreen from "./screens/Parking/parking.screen";
+
 import BookingParkingScreen from "./screens/booking-parking/booking-parking.screen";
 import CardPayment from "./screens/CardPayment/cardpayment";
 import auth from '@react-native-firebase/auth';
@@ -55,11 +52,8 @@ const AppNavigator = () => {
      <Screen name="Home" component={HomeScreen}></Screen>
      <Screen name="CardPayment" component={CardPayment}></Screen>
      {/* <Screen name="ParkingRoute" component={BookingParkingScreen}></Screen> */}
-     <Screen name="Parking №1" component={ParkingScreen1}></Screen>
-     <Screen name="Parking №2" component={ParkingScreen2}></Screen>
-     <Screen name="Parking №3" component={ParkingScreen3}></Screen>
-     <Screen name="Parking №4" component={ParkingScreen4}></Screen>
-     <Screen name="Parking №5" component={ParkingScreen5}></Screen>
+     <Screen name="Parking" component={ParkingScreen}></Screen>
+     
       </Navigator>
     </NavigationContainer>
   );

@@ -37,6 +37,7 @@ export const RegisterScreen = (props: RegisterScreenProps) => {
           if (passwordValue === RepeatPasswordValue) {
             auth()
               .createUserWithEmailAndPassword(loginValue.toString(), passwordValue.toString())
+             
               .then(() => {
                 console.log('User account created & signed in!');
               })

@@ -7,7 +7,7 @@ import BookingParkingScreen from './app/screens/booking-parking/booking-parking.
 import CardPayment from './app/screens/CardPayment/cardpayment';
 import HomeScreen from './app/screens/home/home.screen';
 import { LoginScreen } from './app/screens/login/login.screen';
-import ParkingScreen from './app/screens/Parking/parking1.screen';
+import ParkingScreen from './app/screens/Parking/parking.screen';
 import { RegisterScreen } from './app/screens/register/register.screen';
 
 

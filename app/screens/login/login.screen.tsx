@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Alert, SafeAreaView, View } from 'react-native';
-import { Button, Card, TextInput } from 'react-native-paper';
+import { Button, Card, Text, TextInput } from 'react-native-paper';
 import { LoginStyle } from './login.style';
 import auth from '@react-native-firebase/auth';
 
@@ -12,6 +12,7 @@ interface LoginScreenProps {
 
 export const LoginScreen = (props: LoginScreenProps ) => {
 
+    const [error, setError] = useState('');
 
     const [loginValue, setLoginValue] = useState('');
     const [passwordValue, setPasswordValue] = useState(''); //
@@ -27,6 +28,7 @@ export const LoginScreen = (props: LoginScreenProps ) => {
       };
 
     const login = () => {
+        setError('')
         if (loginValue && passwordValue) {
             auth()
               .signInWithEmailAndPassword(loginValue.toString(), passwordValue.toString())
@@ -35,18 +37,18 @@ export const LoginScreen = (props: LoginScreenProps ) => {
               })
               .catch(error => {
                 if (error.code === 'auth/invalid-email') {
-                    console.log('That email address is invalid!');
+                    setError('That email address is invalid!');
                 }
                 if (error.code === 'auth/user-not-found') {
-                    console.log('That user is not found!');
+                    setError('That user is not found!');
                 }
                 if (error.code === 'auth/wrong-password') {
-                    console.log('The password is invalid!');
+                    setError('The password is invalid!');
                 }
-                console.log(error);
+                setError(error.code);
               });
           } else {
-            console.log('Empty email or password!');
+            setError('Empty email or password!');
           }
           
             
@@ -89,9 +91,14 @@ export const LoginScreen = (props: LoginScreenProps ) => {
                         onPress={register}
                         style={LoginStyle.cardButton}>Register
                     </Button>
+                    <Text>
+                {error.toString()}
+            </Text>
                 </Card.Content>
+                
             </Card>
             </View>
+            
         </SafeAreaView>
     );
 }
