@@ -7,7 +7,7 @@ import { HeaderComponent } from "../../components/header/header.components";
 import { SearchingParkSpaceComponent } from "../../components/searching-park-space/searching-park-space.component";
 import Geolocation from "@react-native-community/geolocation";
 import { homeStyle } from "./home.style";
-//import {firebase} from '@react-native-firebase/firestore';
+import {firebase} from '@react-native-firebase/firestore';
 
 interface HomeScreenProps{
     navigation: any;
