@@ -61,13 +61,16 @@ export const RegisterScreen = (props: RegisterScreenProps) => {
         }
       };
 
+
     return (
         
         <SafeAreaView>
                
             <ScrollView >
                  <HeaderComponent 
-                        title="Register" navigation={props.navigation} />  
+                        title="Register" 
+                        hasBackButton={true}
+                        navigation={props.navigation} />  
             
                 <View style={registerStyle.content}>
                 

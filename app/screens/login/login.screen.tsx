@@ -28,6 +28,7 @@ export const LoginScreen = (props: LoginScreenProps ) => {
       };
 
     const login = () => {
+        
         setError('')
         if (loginValue && passwordValue) {
             auth()
@@ -77,10 +78,6 @@ export const LoginScreen = (props: LoginScreenProps ) => {
                         onChangeText={handleOnChangePassword}>
                     </TextInput>
                     <Button 
-                        uppercase={false}
-                        style={LoginStyle.cardButton}>Forgot email/password
-                    </Button>
-                    <Button 
                         onPress={login}
                         mode="contained"
                         style={LoginStyle.cardButton}
@@ -89,11 +86,12 @@ export const LoginScreen = (props: LoginScreenProps ) => {
                     </Button>
                     <Button 
                         onPress={register}
+                        mode="contained-tonal"
                         style={LoginStyle.cardButton}>Register
                     </Button>
-                    <Text>
-                {error.toString()}
-            </Text>
+                    <Text style={LoginStyle.Error}> 
+                        {error.toString()}
+                    </Text>
                 </Card.Content>
                 
             </Card>

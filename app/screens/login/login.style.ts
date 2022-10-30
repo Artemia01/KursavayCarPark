@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { red100 } from "react-native-paper/lib/typescript/styles/themes/v2/colors";
 
 export const LoginStyle =StyleSheet.create({
     content: {
@@ -18,11 +19,16 @@ export const LoginStyle =StyleSheet.create({
     },
 
     cardButton: {
+        marginTop: 10,
         margin: 2,
         marginleft: 0,
         marginRight: 0
     },
 
+    Error: {
+        color: "#f44336",
+        marginLeft: 70,
+    },
    
     
 })
