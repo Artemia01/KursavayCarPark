@@ -127,7 +127,7 @@ function getMyLocation(){
                 style={homeStyle.flex}
                 region={region}
                 zoomEnabled={true}
-                minZoomLevel={13}
+                minZoomLevel={1}
                 showsUserLocation={true}
                 loadingEnabled={true}
                 >
