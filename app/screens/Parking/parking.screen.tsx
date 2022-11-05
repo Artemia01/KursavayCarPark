@@ -1,106 +1,123 @@
 import { useLinkProps } from "@react-navigation/native";
 import React from "react";
-import { SafeAreaView, View } from "react-native";
+import {  Image, SafeAreaView, View } from "react-native";
 import MapView from "react-native-maps";
-import { Avatar, Card, List, Text, Title} from "react-native-paper";
-import { Image } from "react-native-paper/lib/typescript/components/Avatar/Avatar";
+import { Avatar, Card,  Text, Title} from "react-native-paper";
+//import { Image } from "react-native-paper/lib/typescript/components/Avatar/Avatar";
 import { HeaderComponent } from "../../components/header/header.components";
 import { parkingStyle } from "./parking.style";
+import { Button } from 'react-native-paper';
+import { Screen } from "react-native-screens";
 
 interface ParkingScreen1Props {
     
     id: number,
     latitude: number,
     longitude: number,
-    parkingButtons: Array <{id: number, pay: boolean}>,
     name: string,
     address: string,
     image: string,
 
 }
 
-interface ParkingButtonProps {
-    id: number;
-    pay: boolean;
-}
-
-
-
-const parkingButtons = [{'id':1, 'pay':true}, {'id':2, 'pay':true}, {'id':3, 'pay':true}, {'id':4, 'pay':true}, {'id':5, 'pay':true}, {'id':6, 'pay':true}, 
-                       {'id':7, 'pay':true}, {'id':8, 'pay':true}, {'id':9, 'pay':true}, {'id':10, 'pay':true}, {'id':11, 'pay':true}, {'id':12, 'pay':true}]
-
 
 
                        
 const ParkingScreen = ({navigation,route}:any, props:ParkingScreen1Props) =>{
-    const {name, address, image} = route.params;
+    const {name, address, image, description, price, raiting} = route.params;
 
     const Payment =() => navigation.navigate("CardPayment")
     
 
-     const ParkingButton = (props: ParkingButtonProps) => <Text key= {props.id} style={[parkingStyle.box, { backgroundColor: "gray" }]} onPress={Payment} >{props.id}</Text>
+    //  const ParkingButton = (props: ParkingButtonProps) => <Text key= {props.id} style={[parkingStyle.box, { backgroundColor: "gray" }]} onPress={Payment} >{props.id}</Text>
     
 
     return (
-        <SafeAreaView style={parkingStyle.flex}>
-            <HeaderComponent 
-            title={name} 
-            hasBackButton={true}
-            navigation={navigation}/>
-            <View style={parkingStyle.flex}>
-                <MapView
-                    initialRegion={{
-                        latitude: 47.8228900,
-                        longitude: 35.1903100,
-                        latitudeDelta: 0.09,
-                        longitudeDelta: 0.04
-                    }}
-                    style={parkingStyle.flex}>
+        <SafeAreaView >
+                <HeaderComponent 
+                title={name} 
+                hasBackButton={true}
+                navigation={navigation}/>
+                <View >
+                
 
-                </MapView>
-            </View>
-            <Card>
-                <Card.Content>
-                <List.Item
-                    title={name}
-                    description="Work Time: 24/7"
-                    left={() => 
-                        <Avatar.Image
-                            size={80}
-                            source={{uri: image}}
-                        />
-                    }
-                />
-                 <List.Item
-                    title="Address"
-                    description={address}
-                    left={()=>
-                        <List.Icon icon="flag-outline"/>
-                    }
-                    />
-                    <View style={parkingStyle.row}>
+                        <Image style= {parkingStyle.photo}
+                        source={{uri: image}}/>
+
+                 </View >
+                
+                <View style={parkingStyle.ramka}>
                     
-                    <Text style={[parkingStyle.boxmark, { backgroundColor: "gray" }]} >Booked</Text>
-                    <Text style={[parkingStyle.boxmark, { backgroundColor: "steelblue" }]} >UnBooked</Text>
+                       <View style={parkingStyle.content}>
+                            <Text style={parkingStyle.name}
+                            >{name}</Text>
+
+                            <Avatar.Icon 
+                            style={parkingStyle.star}
+                            size={24} icon="star" />
+
+                            <Text style={parkingStyle.raiting}
+                            > {raiting} </Text>
+
+                            <Text style={parkingStyle.raitingText}
+                            >Raiting </Text>
+
+                        </View>
+
+                        <View style={parkingStyle.line}></View>
+
+                        <View style={parkingStyle.content}>
+                            <Text style={parkingStyle.address}
+                            >Address:</Text>
+
+                            <Avatar.Icon 
+                            style={parkingStyle.flag}
+                            size={24} icon="flag" />
+
+
+                            <Text style={parkingStyle.address}
+                            >{address}</Text>
+                        </View>
+
+                       
+
+                        <View style={parkingStyle.content}>
+                            <Text style={parkingStyle.description}
+                            >Description:</Text>
+
+                            <Avatar.Icon 
+                            style={parkingStyle.table}
+                            size={24} icon="table" />
+
+                            <Text style={parkingStyle.description}
+                            >{description}</Text>
+                        </View>
+
+                        
+
+                        <View style={parkingStyle.content}>
+
+                            <Text style={parkingStyle.price}
+                            >Price:</Text>
+
+                            <Avatar.Icon 
+                            style={parkingStyle.coin}
+                            size={24} icon="currency-usd" />
+
+                            <Text style={parkingStyle.price}
+                            >{price}</Text>
+
+                           
+                        </View>
+
+                        
                     </View>
-                    
-                    
-                   
-                <View>
+                    <Button style={parkingStyle.button}
+                                onPress={Payment}
+                                mode="contained"
+                                >Pay
+                            </Button>
 
-
-                <View style={parkingStyle.button}>
-                <View style={parkingStyle.row}>
-                  {parkingButtons.map(ParkingButton)}
-                    </View>
-                </View>
-                </View>
-
-
-
-
-                </Card.Content>
-            </Card>
         </SafeAreaView>
     )
 }

@@ -2,61 +2,115 @@ import { StyleSheet } from "react-native"
 import { theme } from "../../../App.style"
 
 export const parkingStyle = StyleSheet.create ({
-    flex: {
-        flex: 1
-    },
-    cardTitle: {
-        color: theme.color
-    },
    
-    box: {
-        width: 70,
-        height: 50,
-        textAlign: "center",
-        marginHorizontal: "1%",
-        paddingHorizontal: 9,
-        paddingVertical: 15,
-        borderRadius: 4,
+    photo: {
+        width:410, 
+        height:330,
+        borderColor: '#d3d3d3',
+        borderWidth: 5,
+        borderRadius: 20,
+    },
+
+    ramka: {
+        marginTop: 10,
+        borderColor: '#d3d3d3',
+        borderWidth: 5,
+        borderRadius: 20,
+    },
+
+    name: {
+        
+        fontSize: 30,
+        
+    },
+
+    raiting: {
+        justifyContent: "center",
+        alignItems: "center",
+        marginLeft: 5,
+        marginTop: 8,
+        fontSize: 18,
+        borderColor: '#FFD700',
+        borderWidth: 5,
+        borderRadius: 20,
+        width:55,
+        height:27,
+
+        
+    },
+
+    raitingText: {
+        marginLeft:5,
+        marginTop: 5,
+        fontSize: 22,
+
+        
+    },
+
+
+    address: {
+        fontSize: 22,
       
-        alignSelf: "flex-start",
-        
-        marginBottom: 6,
-        minWidth: "23%",
-       
+    },
+
+    description: {
+        fontSize: 22,
         
     },
-    row: {
-        flexDirection: "row",
-        flexWrap: "wrap",
+
+    price: {
+        fontSize: 22,
         
     },
+
     button: {
-        paddingHorizontal: 9,
-        paddingVertical: 6,
-        borderRadius: 4,
-        backgroundColor: "white",
-        alignSelf: "flex-start",
-        marginBottom: 6,
+        marginTop:10,
+        height:40,
+        width:250,
+        marginLeft:90,
+
+    },
+
+    content: {
+        marginLeft:10,
+        flexDirection: "row",  
         
-        
-      },
-      boxmark: {
-        width: 20,
-        height: 40,
-        textAlign: "center",
-        marginHorizontal: "3.5%",
-        borderRadius: 4,
-        alignSelf: "flex-start",
-        marginBottom: 9,
-        minWidth: "93%",
-        paddingVertical: 3,
-        fontSize: 24
-        
-       
         
     },
     
    
+    star: {
+        marginLeft: 20,
+        marginTop:9,
+    },
+
+    flag: {
+        marginRight:10,
+        marginLeft: 37,
+        marginTop:5,
+    },
+
+    table: {
+        marginRight:10,
+        marginLeft: 7,
+        marginTop:5,
+    },
+
+    coin: {
+        marginRight:10,
+        marginLeft: 69,
+        marginTop:3,
+    },
+
+
+    line: {
+        marginBottom:10,
+        marginLeft:10,
+        marginRight:10,
+        borderColor: '#d3d3d3',
+        borderBottomWidth: 3,
+
+    },
     
 
 })

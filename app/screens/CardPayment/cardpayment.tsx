@@ -9,14 +9,18 @@ import { InputMode } from 'react-native-paper/lib/typescript/components/TextInpu
 
 import MaskInput, { Masks } from 'react-native-mask-input';
 import { formatWithMask } from 'react-native-mask-input'
+import HomeScreen from '../home/home.screen';
+import ParkingScreen from '../Parking/parking.screen';
 
 interface CardPaymentProps {
     navigation: any;
 }
 
 
-export const CardPayment = (props: CardPaymentProps) => {
+export const CardPayment = ({navigation}: any,props: CardPaymentProps) => {
     
+     const HomeScreen =() => navigation.navigate("Home")
+     const ParkingScreen =() => navigation.navigate("Parking",)// не понимает к какой парковке вернуться 
     
     const [creditCard, setCreditCard] = React.useState('');
     const [creditCardDate, setCreditCardDate] = React.useState('');
@@ -26,8 +30,8 @@ export const CardPayment = (props: CardPaymentProps) => {
             <SafeAreaView >
             <HeaderComponent 
             title="Make Payment" 
-            hasBackButton={true}
-            navigation={props.navigation}
+            // hasBackButton={true}
+            // navigation={props.navigation}
             />
                
                 <View style={CardPaymentStyle.content}>
@@ -74,15 +78,15 @@ export const CardPayment = (props: CardPaymentProps) => {
 
                                     
                 <Button
-                onPress={() => {}}
+                onPress={HomeScreen}
                 mode="elevated"
                 style={CardPaymentStyle.cardButton}>Cancel Payment
                 </Button>
 
                 <Button
-                onPress={() => {}}
+                 onPress={HomeScreen} // при оплате 
                 mode="contained"
-                style={CardPaymentStyle.cardButton}>Pay
+                style={CardPaymentStyle.cardButton}>Confirm Payment
                 </Button>
 
 
