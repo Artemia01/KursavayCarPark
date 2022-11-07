@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { red100 } from "react-native-paper/lib/typescript/styles/themes/v2/colors";
+
 
 export const LoginStyle =StyleSheet.create({
     content: {
@@ -8,13 +8,13 @@ export const LoginStyle =StyleSheet.create({
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "row",
-            backgroundColor: "#75975e" 
+            // backgroundColor: "#75975e" 
     },
     view: {
         width: "80%"
     },
     cardTitle: {
-        color: "rgb(101,37,131)", //цвет текста Кар парк
+        // color: "rgb(101,37,131)", //цвет текста Кар парк
         
     },
 
