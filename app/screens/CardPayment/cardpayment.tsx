@@ -1,22 +1,13 @@
-import React, { useState } from 'react';
-import { SafeAreaView, View, Text, StyleSheet, InputAccessoryView, TextInputComponent} from "react-native";
-import { Button, Card, TextInput} from 'react-native-paper';
+import React from 'react';
+import { SafeAreaView, View, Text} from "react-native";
+import { Button} from 'react-native-paper';
 import { CardPaymentStyle } from './cardpayment.style';
 import { HeaderComponent } from "../../components/header/header.components";
-
-import { InputMode } from 'react-native-paper/lib/typescript/components/TextInput/Adornment/enums';
-
-
 import MaskInput, { Masks } from 'react-native-mask-input';
-import { formatWithMask } from 'react-native-mask-input'
-import HomeScreen from '../home/home.screen';
-import ParkingScreen from '../Parking/parking.screen';
-import BookingParkingScreen from '../qrCode/qrcode.screen';
 
 interface CardPaymentProps {
     navigation: any;
 }
-
 
 export const CardPayment = ({navigation}: any,props: CardPaymentProps) => {
     
@@ -44,7 +35,6 @@ export const CardPayment = ({navigation}: any,props: CardPaymentProps) => {
             <SafeAreaView >
             <HeaderComponent 
             title="Make Payment" 
-            
             />
                
                 <View style={CardPaymentStyle.content}>
@@ -105,11 +95,7 @@ export const CardPayment = ({navigation}: any,props: CardPaymentProps) => {
                 </SafeAreaView>
           );
         
-    
-    
 }
-
-
 export default CardPayment;
 
 

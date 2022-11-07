@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { theme } from "../../../App.style";
 
 export const qrCodeScreen = StyleSheet.create({
     
@@ -10,8 +9,6 @@ export const qrCodeScreen = StyleSheet.create({
         alignItems: "center",
         alignSelf: "center",
        
-        
-
     },
 
     qr:{

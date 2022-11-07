@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Image, SafeAreaView, Platform, PermissionsAndroid } from "react-native";
-import MapView,{ Callout, Circle, Marker } from "react-native-maps";
-import { FAB, Text } from "react-native-paper";
-import { ConfirmParkingSpaceComponent } from "../../components/header/confirm-parking-space/confirm-parking-space.component";
+import MapView,{  Marker } from "react-native-maps";
 import { HeaderComponent } from "../../components/header/header.components";
-import { SearchingParkSpaceComponent } from "../../components/searching-park-space/searching-park-space.component";
 import Geolocation from "@react-native-community/geolocation";
 import { homeStyle } from "./home.style";
-import {firebase} from '@react-native-firebase/firestore';
 
 interface HomeScreenProps{
     navigation: any;
@@ -45,9 +41,6 @@ const parkings = [
 
 ]
 
-
-
-
 const HomeScreen = (props: HomeScreenProps) =>{
 
 const renderMarker = (props:ParkingsProps) => (<Marker 
@@ -61,10 +54,7 @@ const renderMarker = (props:ParkingsProps) => (<Marker
             source={require("../../../assets/pngwing.com.png")}/>
 </Marker>)
 
-
-const [region, setRegion] = useState(); //можно убрать нулл
-
-
+const [region, setRegion] = useState(); 
 
 useEffect(() =>{
     getMyLocation()
@@ -79,15 +69,8 @@ function getMyLocation(){
     })
 }
 
-
-
-
-   
-
     const openMark = (item:ParkingsProps) => props.navigation.navigate("Parking",{name:item.name, address:item.address, image:item.image, description:item.description, price:item.price, raiting:item.raiting},)
     
-    
-
     return (
         <SafeAreaView style={homeStyle.flex}>
              <HeaderComponent title="CarPark" 
@@ -114,17 +97,8 @@ function getMyLocation(){
               
                {parkings.map (renderMarker)} 
 
-
-            
-                
-
             </MapView>
 
-
-
-            
-               
-            
         </SafeAreaView>
     )
 }

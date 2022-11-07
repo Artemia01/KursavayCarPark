@@ -18,7 +18,6 @@ export const HeaderComponent = (props: HeaderComponentParams) => {
     const openMenu = ()=> setVisible(true);
     const closeMenu = ()=> setVisible(false);
 
-    //const goToMyParkingPlaces = () => props.navigation?.navigate("ParkingPlaces")
     
     
     const logout = () => {
@@ -42,10 +41,7 @@ export const HeaderComponent = (props: HeaderComponentParams) => {
                             color={headerStyle.menu.color}
                             onPress={openMenu}/>
                     }>
-                    {/* <Menu.Item
-                        title="My Parking places" 
-                        onPress={goToMyParkingPlaces}/> тайм код 13:37 №6*/ } 
-
+                    
                      <Menu.Item
                         title="LogOut" 
                         onPress={() => {

@@ -1,13 +1,9 @@
-import { useLinkProps } from "@react-navigation/native";
 import React from "react";
 import {  Image, SafeAreaView, View } from "react-native";
-import MapView from "react-native-maps";
-import { Avatar, Card,  Text, Title} from "react-native-paper";
-//import { Image } from "react-native-paper/lib/typescript/components/Avatar/Avatar";
+import { Avatar, Text} from "react-native-paper";
 import { HeaderComponent } from "../../components/header/header.components";
 import { parkingStyle } from "./parking.style";
 import { Button } from 'react-native-paper';
-import { Screen } from "react-native-screens";
 
 interface ParkingScreen1Props {
     
@@ -19,19 +15,12 @@ interface ParkingScreen1Props {
     image: string,
 
 }
-
-
-
-                       
+                    
 const ParkingScreen = ({navigation,route}:any, props:ParkingScreen1Props) =>{
     const {name, address, image, description, price, raiting} = route.params;
 
     const Payment =() => navigation.navigate("CardPayment")
     
-
-    
-    
-
     return (
         <SafeAreaView >
                 <HeaderComponent 
@@ -121,5 +110,4 @@ const ParkingScreen = ({navigation,route}:any, props:ParkingScreen1Props) =>{
         </SafeAreaView>
     )
 }
-
 export default ParkingScreen;

@@ -5,13 +5,9 @@ import { LoginScreen } from "./screens/login/login.screen";
 import HomeScreen from "./screens/home/home.screen";
 import { RegisterScreen } from "./screens/register/register.screen";
 import ParkingScreen from "./screens/Parking/parking.screen";
-
-
 import CardPayment from "./screens/CardPayment/cardpayment";
 import auth from '@react-native-firebase/auth';
 import QrCodeScreen from "./screens/qrCode/qrcode.screen";
-
-
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -58,63 +54,7 @@ const AppNavigator = () => {
       </Navigator>
     </NavigationContainer>
   );
-
-
-
 }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export default AppNavigator;
 
 
-
-// <NavigationContainer  >
-// <Navigator  
-// initialRouteName="Login"
-// screenOptions={{headerShown: false}} > 
-//     <Screen name="Login" component={LoginScreen}></Screen>
-//     <Screen name="Home" component={HomeScreen}></Screen>
-//     <Screen name="Register" component={RegisterScreen}></Screen>
-//     <Screen name="CardPayment" component={CardPayment}></Screen>
-//     {/* <Screen name="ParkingRoute" component={BookingParkingScreen}></Screen> */}
-//     <Screen name="Parking №1" component={ParkingScreen1}></Screen>
-//     <Screen name="Parking №2" component={ParkingScreen2}></Screen>
-//     <Screen name="Parking №3" component={ParkingScreen3}></Screen>
-//     <Screen name="Parking №4" component={ParkingScreen4}></Screen>
-//     <Screen name="Parking №5" component={ParkingScreen5}></Screen>
-
-// </Navigator>
-// </NavigationContainer>

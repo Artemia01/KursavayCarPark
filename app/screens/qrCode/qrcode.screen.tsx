@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Dimensions, SafeAreaView, View } from "react-native";
-import { Button, Text, TextInput, Title } from "react-native-paper";
-import { HeaderComponent } from "../../components/header/header.components";
+import { Button, Text} from "react-native-paper";
 import { qrCodeScreen } from "./qrcode.style";
 import QRCode from "react-qr-code";
 
@@ -9,8 +8,6 @@ interface QrCodeScreenProps {
     navigation: any;
 }
 const {width} = Dimensions.get('screen');
-
-
 
 const QrCodeScreen = ({navigation}: any,props: QrCodeScreenProps) => {
 
@@ -29,12 +26,11 @@ const QrCodeScreen = ({navigation}: any,props: QrCodeScreenProps) => {
                     size={width*0.6}
                     style={{ height: "100%", maxWidth: "100%", width: "100%" }}
                     value={orderNumber.toString()}
-                    // viewBox={`0 0 256 256`}
                     />
                 </View>
 
                 <Button
-                 onPress={HomeScreen} // при оплате 
+                 onPress={HomeScreen} 
                 mode="contained"
                 >Close
                 </Button>
@@ -43,5 +39,4 @@ const QrCodeScreen = ({navigation}: any,props: QrCodeScreenProps) => {
         </SafeAreaView>
     )
 }
-
 export default QrCodeScreen;

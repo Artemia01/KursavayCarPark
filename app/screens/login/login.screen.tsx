@@ -4,14 +4,12 @@ import { Button, Card, Text, TextInput } from 'react-native-paper';
 import { LoginStyle } from './login.style';
 import auth from '@react-native-firebase/auth';
 
-
 interface LoginScreenProps {
     navigation: any;
 }
 
 export const LoginScreen = (props: LoginScreenProps ) => {
     
-   
     const [error, setError] = useState('');
 
     const [loginValue, setLoginValue] = useState('');
@@ -51,11 +49,6 @@ export const LoginScreen = (props: LoginScreenProps ) => {
           } else {
             setError('Empty email or password!');
           }
-          
-            
-          
-            
-        
       };
 
     const register = () => props.navigation.navigate("Register")
