@@ -6,9 +6,10 @@ import HomeScreen from "./screens/home/home.screen";
 import { RegisterScreen } from "./screens/register/register.screen";
 import ParkingScreen from "./screens/Parking/parking.screen";
 
-import BookingParkingScreen from "./screens/booking-parking/booking-parking.screen";
+
 import CardPayment from "./screens/CardPayment/cardpayment";
 import auth from '@react-native-firebase/auth';
+import QrCodeScreen from "./screens/qrCode/qrcode.screen";
 
 
 
@@ -51,7 +52,7 @@ const AppNavigator = () => {
       <Navigator initialRouteName={'Home'} screenOptions={{headerShown: false}}>
      <Screen name="Home" component={HomeScreen}></Screen>
      <Screen name="CardPayment" component={CardPayment}></Screen>
-     {/* <Screen name="ParkingRoute" component={BookingParkingScreen}></Screen> */}
+     <Screen name="QrCode" component={QrCodeScreen}></Screen>
      <Screen name="Parking" component={ParkingScreen}></Screen>
      
       </Navigator>

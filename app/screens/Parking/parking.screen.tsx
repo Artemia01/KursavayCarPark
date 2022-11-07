@@ -29,7 +29,7 @@ const ParkingScreen = ({navigation,route}:any, props:ParkingScreen1Props) =>{
     const Payment =() => navigation.navigate("CardPayment")
     
 
-    //  const ParkingButton = (props: ParkingButtonProps) => <Text key= {props.id} style={[parkingStyle.box, { backgroundColor: "gray" }]} onPress={Payment} >{props.id}</Text>
+    
     
 
     return (

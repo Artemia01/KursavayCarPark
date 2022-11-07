@@ -68,6 +68,7 @@ export const parkingStyle = StyleSheet.create ({
         height:40,
         width:250,
         marginLeft:90,
+        
 
     },
 

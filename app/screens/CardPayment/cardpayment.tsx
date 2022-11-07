@@ -11,6 +11,7 @@ import MaskInput, { Masks } from 'react-native-mask-input';
 import { formatWithMask } from 'react-native-mask-input'
 import HomeScreen from '../home/home.screen';
 import ParkingScreen from '../Parking/parking.screen';
+import BookingParkingScreen from '../qrCode/qrcode.screen';
 
 interface CardPaymentProps {
     navigation: any;
@@ -19,9 +20,22 @@ interface CardPaymentProps {
 
 export const CardPayment = ({navigation}: any,props: CardPaymentProps) => {
     
-     const HomeScreen =() => navigation.navigate("Home")
-     const ParkingScreen =() => navigation.navigate("Parking",)// не понимает к какой парковке вернуться 
+     const QrCodeScreen =() => {
+        
+        if (creditCard.length == 19  && creditCardDate.length == 5 && creditCardCVV.length == 3)
+        {
+            navigation.navigate("QrCode") 
+        }
+
+        else {
+            setError('All fields should be filled')
+        }
+     }
+
     
+    const ParkingScreen =() => navigation.goBack()
+    
+    const [error, setError] = React.useState('');
     const [creditCard, setCreditCard] = React.useState('');
     const [creditCardDate, setCreditCardDate] = React.useState('');
     const [creditCardCVV, setCreditCardCVV] = React.useState('');
@@ -30,8 +44,7 @@ export const CardPayment = ({navigation}: any,props: CardPaymentProps) => {
             <SafeAreaView >
             <HeaderComponent 
             title="Make Payment" 
-            // hasBackButton={true}
-            // navigation={props.navigation}
+            
             />
                
                 <View style={CardPaymentStyle.content}>
@@ -72,29 +85,22 @@ export const CardPayment = ({navigation}: any,props: CardPaymentProps) => {
 
                         </View> 
 
-                       
-
                 </View>
 
+                    <Text>{error}</Text>
                                     
                 <Button
-                onPress={HomeScreen}
+                onPress={ParkingScreen}
                 mode="elevated"
                 style={CardPaymentStyle.cardButton}>Cancel Payment
                 </Button>
 
                 <Button
-                 onPress={HomeScreen} // при оплате 
+                 onPress={QrCodeScreen} 
                 mode="contained"
                 style={CardPaymentStyle.cardButton}>Confirm Payment
                 </Button>
-
-
                 </View>
-
-
-
-
 
                 </SafeAreaView>
           );

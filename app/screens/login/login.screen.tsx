@@ -5,17 +5,17 @@ import { LoginStyle } from './login.style';
 import auth from '@react-native-firebase/auth';
 
 
-
 interface LoginScreenProps {
     navigation: any;
 }
 
 export const LoginScreen = (props: LoginScreenProps ) => {
-
+    
+   
     const [error, setError] = useState('');
 
     const [loginValue, setLoginValue] = useState('');
-    const [passwordValue, setPasswordValue] = useState(''); //
+    const [passwordValue, setPasswordValue] = useState(''); 
 
     const handleOnChangelogin = (query: any) => {
        
