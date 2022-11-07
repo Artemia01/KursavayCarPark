@@ -16,7 +16,7 @@ export const CardPaymentStyle =StyleSheet.create({
     },
 
     creditCard:{
-        backgroundColor: '#ffff',
+        backgroundColor: "rgb(252, 253, 246)",
         marginLeft: 10,
         marginRight: 10,
         height: 300,
@@ -25,7 +25,7 @@ export const CardPaymentStyle =StyleSheet.create({
         borderRadius: 20,
         marginTop: 20,
         marginBottom: 50,
-        borderColor: '#d3d3d3',
+        borderColor: "rgb(215, 232, 205)",
         borderWidth: 5,
 
     },
@@ -45,21 +45,21 @@ export const CardPaymentStyle =StyleSheet.create({
     dates1 :{
         fontSize: 20,
         borderRadius: 15,
-        borderColor: '#d3d3d3',
+        borderColor: "rgb(215, 232, 205)",
         borderWidth: 2,
         marginLeft: 5,
     },
     dates2 :{
         fontSize: 20,
         borderRadius: 15,
-        borderColor: '#d3d3d3',
+        borderColor: "rgb(215, 232, 205)",
         borderWidth: 2,
         marginLeft: 5,
     },
     dates3 :{
         fontSize: 20,
         borderRadius: 15,
-        borderColor: '#d3d3d3',
+        borderColor: "rgb(215, 232, 205)",
         borderWidth: 2,
         marginLeft: 10,
     },

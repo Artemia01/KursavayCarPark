@@ -57,19 +57,20 @@ export const LoginScreen = (props: LoginScreenProps ) => {
         <SafeAreaView style={LoginStyle.content}>
            <View style={LoginStyle.view}>
             <Card>
-                <Card.Title title="Car Park" titleStyle={LoginStyle.cardTitle}></Card.Title>
+                <Card.Title title="Login" titleStyle={LoginStyle.cardTitle}></Card.Title>
                 <Card.Content >
                     <TextInput 
-                    
                         label="Email" 
                         key='email-adress'
                         onChangeText={handleOnChangelogin}>
                     </TextInput>
                     <TextInput 
+                        style={LoginStyle.textspace}
                         label="Password" 
                         secureTextEntry={true}
                         onChangeText={handleOnChangePassword}>
                     </TextInput>
+                    <View style={LoginStyle.buttonspace}>
                     <Button 
                         onPress={login}
                         mode="contained"
@@ -82,6 +83,7 @@ export const LoginScreen = (props: LoginScreenProps ) => {
                         mode="contained-tonal"
                         style={LoginStyle.cardButton}>Register
                     </Button>
+                    </View>
                     <Text style={LoginStyle.Error}> 
                         {error.toString()}
                     </Text>

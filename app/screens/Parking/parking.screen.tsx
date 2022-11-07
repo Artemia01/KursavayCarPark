@@ -27,85 +27,87 @@ const ParkingScreen = ({navigation,route}:any, props:ParkingScreen1Props) =>{
                 title={name} 
                 hasBackButton={true}
                 navigation={navigation}/>
-                <View >
-                
-
-                        <Image style= {parkingStyle.photo}
-                        source={{uri: image}}/>
-
-                 </View >
-                
-                <View style={parkingStyle.ramka}>
-                    
-                       <View style={parkingStyle.content}>
-                            <Text style={parkingStyle.name}
-                            >{name}</Text>
-
-                            <Avatar.Icon 
-                            style={parkingStyle.star}
-                            size={24} icon="star" />
-
-                            <Text style={parkingStyle.raiting}
-                            > {raiting} </Text>
-
-                            <Text style={parkingStyle.raitingText}
-                            >Raiting </Text>
-
-                        </View>
-
-                        <View style={parkingStyle.line}></View>
-
-                        <View style={parkingStyle.content}>
-                            <Text style={parkingStyle.address}
-                            >Address:</Text>
-
-                            <Avatar.Icon 
-                            style={parkingStyle.flag}
-                            size={24} icon="flag" />
-
-
-                            <Text style={parkingStyle.address}
-                            >{address}</Text>
-                        </View>
-
                        
 
+                    <View >
+                    
+
+                            <Image style= {parkingStyle.photo}
+                            source={{uri: image}}/>
+
+                    </View >
+                    
+                    <View style={parkingStyle.ramka}>
+                        
                         <View style={parkingStyle.content}>
-                            <Text style={parkingStyle.description}
-                            >Description:</Text>
+                                <Text style={parkingStyle.name}
+                                >{name}</Text>
 
-                            <Avatar.Icon 
-                            style={parkingStyle.table}
-                            size={24} icon="table" />
+                                <Avatar.Icon 
+                                style={parkingStyle.star}
+                                size={24} icon="star" />
 
-                            <Text style={parkingStyle.description}
-                            >{description}</Text>
-                        </View>
+                                <Text style={parkingStyle.raiting}
+                                > {raiting} </Text>
+
+                                <Text style={parkingStyle.raitingText}
+                                >Raiting </Text>
+
+                            </View>
+
+                            <View style={parkingStyle.line}></View>
+
+                            <View style={parkingStyle.content}>
+                                <Text style={parkingStyle.address}
+                                >Address:</Text>
+
+                                <Avatar.Icon 
+                                style={parkingStyle.flag}
+                                size={24} icon="flag" />
+
+
+                                <Text style={parkingStyle.address}
+                                >{address}</Text>
+                            </View>
 
                         
 
-                        <View style={parkingStyle.content}>
+                            <View style={parkingStyle.content}>
+                                <Text style={parkingStyle.description}
+                                >Description:</Text>
 
-                            <Text style={parkingStyle.price}
-                            >Price:</Text>
+                                <Avatar.Icon 
+                                style={parkingStyle.table}
+                                size={24} icon="table" />
 
-                            <Avatar.Icon 
-                            style={parkingStyle.coin}
-                            size={24} icon="currency-usd" />
+                                <Text style={parkingStyle.description}
+                                >{description}</Text>
+                            </View>
 
-                            <Text style={parkingStyle.price}
-                            >{price}</Text>
+                            
 
-                           
+                            <View style={parkingStyle.content}>
+
+                                <Text style={parkingStyle.price}
+                                >Price:</Text>
+
+                                <Avatar.Icon 
+                                style={parkingStyle.coin}
+                                size={24} icon="currency-usd" />
+
+                                <Text style={parkingStyle.price}
+                                >{price}</Text>
+
+                            
+                            </View>
+
+                            
                         </View>
-
-                        
-                    </View>
-                    <Button style={parkingStyle.button}
-                                onPress={Payment}
-                                mode="contained"
-                                >Pay
-                            </Button>
+                        <Button style={parkingStyle.button}
+                                    onPress={Payment}
+                                    mode="contained"
+                                    >Pay
+                                </Button>
 
         </SafeAreaView>
     )

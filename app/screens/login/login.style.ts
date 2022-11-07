@@ -8,21 +8,32 @@ export const LoginStyle =StyleSheet.create({
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "row",
-            // backgroundColor: "#75975e" 
+            backgroundColor: "rgb(215, 232, 205)" 
     },
     view: {
         width: "80%"
     },
     cardTitle: {
-        // color: "rgb(101,37,131)", //цвет текста Кар парк
+        fontSize:22,
+        fontWeight:'bold',
+        marginLeft:115,
         
+    },
+    textspace:{
+        marginTop:5,
+    },
+    buttonspace:{
+        marginTop:25,
     },
 
     cardButton: {
-        marginTop: 10,
+        // padding:7,
+        marginTop: 15,
         margin: 2,
         marginleft: 0,
-        marginRight: 0
+        marginRight: 0,
+        fontSize:22,
+        
     },
 
     Error: {

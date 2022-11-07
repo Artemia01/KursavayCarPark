@@ -2,24 +2,27 @@ import { StyleSheet } from "react-native"
 
 export const parkingStyle = StyleSheet.create ({
    
+   
+
     photo: {
         width:410, 
         height:330,
-        borderColor: '#d3d3d3',
+        borderColor: "rgb(215, 232, 205)",
         borderWidth: 5,
         borderRadius: 20,
     },
 
     ramka: {
+        padding:10,
         marginTop: 10,
-        borderColor: '#d3d3d3',
+        borderColor: "rgb(215, 232, 205)",
         borderWidth: 5,
         borderRadius: 20,
     },
 
     name: {
         
-        fontSize: 30,
+        fontSize: 26,
         
     },
 
@@ -30,10 +33,12 @@ export const parkingStyle = StyleSheet.create ({
         marginTop: 8,
         fontSize: 18,
         borderColor: '#FFD700',
-        borderWidth: 5,
-        borderRadius: 20,
+        borderWidth: 3,
+        borderRadius: 15,
         width:55,
         height:27,
+        backgroundColor:'#FFD700',
+       
 
         
     },
@@ -73,6 +78,7 @@ export const parkingStyle = StyleSheet.create ({
 
     content: {
         marginLeft:10,
+        marginBottom:5,
         flexDirection: "row",  
         
         
@@ -80,25 +86,25 @@ export const parkingStyle = StyleSheet.create ({
     
    
     star: {
-        marginLeft: 20,
+        marginLeft: 39,
         marginTop:9,
     },
 
     flag: {
         marginRight:10,
-        marginLeft: 37,
+        marginLeft: 79,
         marginTop:5,
     },
 
     table: {
         marginRight:10,
-        marginLeft: 7,
+        marginLeft: 49,
         marginTop:5,
     },
 
     coin: {
         marginRight:10,
-        marginLeft: 69,
+        marginLeft: 112,
         marginTop:3,
     },
 
@@ -107,7 +113,7 @@ export const parkingStyle = StyleSheet.create ({
         marginBottom:10,
         marginLeft:10,
         marginRight:10,
-        borderColor: '#d3d3d3',
+        borderColor: "rgb(215, 232, 205)",
         borderBottomWidth: 3,
 
     },
