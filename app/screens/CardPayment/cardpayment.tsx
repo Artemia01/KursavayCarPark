@@ -77,7 +77,7 @@ export const CardPayment = ({navigation}: any,props: CardPaymentProps) => {
 
                 </View>
 
-                    <Text>{error}</Text>
+                    <Text style={CardPaymentStyle.Error} >{error}</Text>
                                     
                 <Button
                 onPress={ParkingScreen}

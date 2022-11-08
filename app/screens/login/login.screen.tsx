@@ -44,7 +44,7 @@ export const LoginScreen = (props: LoginScreenProps ) => {
                 if (error.code === 'auth/wrong-password') {
                     setError('The password is invalid!');
                 }
-                setError(error.code);
+                setError(error);
               });
           } else {
             setError('Empty email or password!');

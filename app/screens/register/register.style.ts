@@ -8,7 +8,7 @@ export const registerStyle = StyleSheet.create({
         padding: 15,
         paddingTop: 10,
         paddingBottom: '100%',
-        backgroundColor: "rgb(215, 232, 205)" 
+        backgroundColor: "rgb(252, 253, 246)" 
     },
 
    space:{
@@ -23,7 +23,13 @@ export const registerStyle = StyleSheet.create({
         margin: 15,
         marginLeft: 0,
         marginRight: 0,
-    }
+    },
+    Error: {
+        color: "#f44336",
+        marginLeft: 0,
+        textAlign: "center",
+        alignItems: 'center',
+    },
     
 
 })

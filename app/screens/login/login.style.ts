@@ -38,7 +38,11 @@ export const LoginStyle =StyleSheet.create({
 
     Error: {
         color: "#f44336",
-        marginLeft: 70,
+        alignItems: 'center',
+        marginStart:0,
+        
+        marginTop:15,
+        textAlign: "center",
     },
    
     

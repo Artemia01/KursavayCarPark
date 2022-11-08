@@ -104,7 +104,7 @@ export const parkingStyle = StyleSheet.create ({
 
     coin: {
         marginRight:10,
-        marginLeft: 112,
+        marginLeft: 111,
         marginTop:3,
     },
 

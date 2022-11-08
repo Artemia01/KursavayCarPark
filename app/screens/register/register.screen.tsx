@@ -11,6 +11,8 @@ interface RegisterScreenProps {
 
 export const RegisterScreen = (props: RegisterScreenProps) => {
 
+    const [error, setError] = useState('');
+
     const [loginValue, setLoginValue] = useState('');
     const [passwordValue, setPasswordValue] = useState(''); 
     const [RepeatPasswordValue, setRepeatPasswordValue] = useState(''); 
@@ -31,6 +33,7 @@ export const RegisterScreen = (props: RegisterScreenProps) => {
       };
 
       const register = () => {
+        setError('')
         if (loginValue && passwordValue && RepeatPasswordValue) {
           if (passwordValue === RepeatPasswordValue) {
             auth()
@@ -41,21 +44,21 @@ export const RegisterScreen = (props: RegisterScreenProps) => {
               })
               .catch(error => {
                 if (error.code === 'auth/invalid-email') {
-                    console.log('That email address is invalid!');
+                    setError('That email address is invalid!');
                 }
                 if (error.code === 'auth/user-not-found') {
-                    console.log('That user is not found!');
+                  setError('That user is not found!');
                 }
                 if (error.code === 'auth/email-already-in-use') {
-                  console.log('That email address is already in use!');
+                  setError('That email address is already in use!');
                 }
-                console.log(error);
+                setError(error);
               });
           } else {
-            console.log('Repeat password correctly!');
+            setError('Repeat password correctly!');
           }
         } else {
-            console.log('Empty email or password!');
+          setError('Empty email or password!');
         }
       };
 
@@ -102,6 +105,9 @@ export const RegisterScreen = (props: RegisterScreenProps) => {
                         style={registerStyle.button} 
                         onPress={register}>Register</Button>
 
+                     <Text style={registerStyle.Error}> 
+                        {error.toString()}
+                    </Text>
 
                 </View>
                 </View>

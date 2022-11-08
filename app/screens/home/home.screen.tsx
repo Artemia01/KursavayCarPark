@@ -28,7 +28,7 @@ const parkings = [
  'description':'Covered car park', 'price': '2$', 'raiting': '4.6/5'},
 
 {'id': 2, 'latitude': 47.8508900, 'longitude': 35.13089100, 'name': 'Parking #2', 'address':'Ponusiuk st,67', 'image':'https://storage.sea.com.ua/uploads/images/completed-projects/Parkovka/parkovka.jpg',
-'description':'Covered car park', 'price': '3$', 'raiting': '4.9/5'},
+'description':'Сovered car park', 'price': '3$', 'raiting': '4.9/5'},
 
 {'id': 3, 'latitude': 47.8228900, 'longitude': 35.1533100, 'name': 'Parking #3', 'address':' Prochen st,18', 'image':'https://fainaidea.com/wp-content/uploads/2016/04/img-20150930174534-663-1.jpg',
 'description':'Covered car park', 'price': '1.5$', 'raiting': '4.2/5'},

@@ -8,10 +8,11 @@ export const CardPaymentStyle =StyleSheet.create({
      
 },
     cardButton: {
-        margin: 2,
+        margin: 10,
         marginleft: 0,
         marginRight: 0,
         width: 300,
+
 
     },
 
@@ -24,7 +25,7 @@ export const CardPaymentStyle =StyleSheet.create({
         padding: 12,
         borderRadius: 20,
         marginTop: 20,
-        marginBottom: 50,
+        marginBottom: 30,
         borderColor: "rgb(215, 232, 205)",
         borderWidth: 5,
 
@@ -77,6 +78,12 @@ export const CardPaymentStyle =StyleSheet.create({
     text3 :{
         fontSize: 20,
         marginLeft: 50
+    },
+
+    Error: {
+        color: "#f44336",
+        marginLeft: 0,
+        marginBottom:20,
     },
    
     
