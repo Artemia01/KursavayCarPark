@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Appbar, Menu } from 'react-native-paper';
-import { headerStyle } from './header.style';
 import auth from '@react-native-firebase/auth';
 
 interface HeaderComponentParams{
@@ -38,7 +37,6 @@ export const HeaderComponent = (props: HeaderComponentParams) => {
                     anchor={
                         <Appbar.Action
                             icon="menu"
-                            color={headerStyle.menu.color}
                             onPress={openMenu}/>
                     }>
                     
