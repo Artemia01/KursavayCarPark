@@ -52,7 +52,10 @@ export const RegisterScreen = (props: RegisterScreenProps) => {
                 if (error.code === 'auth/email-already-in-use') {
                   setError('That email address is already in use!');
                 }
-                setError(error);
+                if (error.code === 'auth/weak-password') {
+                  setError('Password should be at least 6 characters');
+                }
+                console.log(error);
               });
           } else {
             setError('Repeat password correctly!');
